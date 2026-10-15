@@ -1,0 +1,55 @@
+{
+  "architecture": "EfficientNetB0",
+  "input_shape": [
+    224,
+    224,
+    3
+  ],
+  "supported_classes": [
+    "Benign",
+    "Malignant"
+  ],
+  "class_encoding": {
+    "0": "Benign",
+    "1": "Malignant"
+  },
+  "positive_class": "Malignant",
+  "decision_threshold": 0.44,
+  "default_threshold": 0.5,
+  "threshold_analysis": {
+    "selected_threshold": 0.44,
+    "selection_criterion": "Maximized Youden's J on validation set (specificity >= 0.75)",
+    "selected_threshold_val_metrics": {
+      "val_sensitivity": 0.7816,
+      "val_specificity": 0.8013,
+      "val_f1": 0.601,
+      "val_youden_j": 0.5829
+    },
+    "default_0_50_val_metrics": {
+      "threshold": 0.5,
+      "val_sensitivity": 0.7201,
+      "val_specificity": 0.8361,
+      "val_f1": 0.6011
+    }
+  },
+  "training_hyperparameters": {
+    "random_seed": 42,
+    "batch_size": 32,
+    "head_epochs_requested": 8,
+    "finetune_epochs_requested": 12,
+    "total_epochs_completed": 20,
+    "head_learning_rate": 0.001,
+    "finetune_learning_rate": 0.0001,
+    "dropout_rate": 0.35,
+    "unfrozen_backbone_layers": 23,
+    "pretrained_weights": "imagenet",
+    "loss_function": "binary_crossentropy",
+    "optimizer": "Adam",
+    "class_weights": {
+      "0": 0.621279,
+      "1": 2.561359
+    }
+  },
+  "trained_at": "2026-10-10T21:14:14.199344+00:00",
+  "model_weights_file": "efficientnetb0_ham10000_binary.keras"
+}

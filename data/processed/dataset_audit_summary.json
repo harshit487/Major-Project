@@ -1,0 +1,176 @@
+{
+  "dataset_name": "HAM10000",
+  "metadata_source": "HAM10000_metadata.csv",
+  "total_metadata_rows": 10015,
+  "verified_images_count": 10015,
+  "missing_images_count": 0,
+  "duplicate_image_ids_removed": 0,
+  "missing_metadata_values": {
+    "lesion_id": 0,
+    "image_id": 0,
+    "dx": 0,
+    "dx_type": 0,
+    "age": 57,
+    "sex": 0,
+    "localization": 0
+  },
+  "unknown_category_values": {
+    "sex": 57,
+    "localization": 234,
+    "dx_type": 0
+  },
+  "original_seven_class_distribution": {
+    "akiec": {
+      "count": 327,
+      "percentage": 3.27,
+      "mapped_binary_label": 1,
+      "mapped_binary_class": "Malignant",
+      "full_name": "Actinic keratoses and intraepithelial carcinoma / Bowen's disease"
+    },
+    "bcc": {
+      "count": 514,
+      "percentage": 5.13,
+      "mapped_binary_label": 1,
+      "mapped_binary_class": "Malignant",
+      "full_name": "Basal cell carcinoma"
+    },
+    "bkl": {
+      "count": 1099,
+      "percentage": 10.97,
+      "mapped_binary_label": 0,
+      "mapped_binary_class": "Benign",
+      "full_name": "Benign keratosis-like lesions (solar lentigines / seborrheic keratoses / lichen-planus like keratoses)"
+    },
+    "df": {
+      "count": 115,
+      "percentage": 1.15,
+      "mapped_binary_label": 0,
+      "mapped_binary_class": "Benign",
+      "full_name": "Dermatofibroma"
+    },
+    "mel": {
+      "count": 1113,
+      "percentage": 11.11,
+      "mapped_binary_label": 1,
+      "mapped_binary_class": "Malignant",
+      "full_name": "Melanoma"
+    },
+    "nv": {
+      "count": 6705,
+      "percentage": 66.95,
+      "mapped_binary_label": 0,
+      "mapped_binary_class": "Benign",
+      "full_name": "Melanocytic nevi"
+    },
+    "vasc": {
+      "count": 142,
+      "percentage": 1.42,
+      "mapped_binary_label": 0,
+      "mapped_binary_class": "Benign",
+      "full_name": "Vascular lesions (angiomas, angiokeratomas, pyogenic granulomas, hemorrhage)"
+    }
+  },
+  "binary_class_distribution": {
+    "Benign": {
+      "label": 0,
+      "count": 8061,
+      "percentage": 80.49,
+      "included_dx": [
+        "nv",
+        "bkl",
+        "df",
+        "vasc"
+      ]
+    },
+    "Malignant": {
+      "label": 1,
+      "count": 1954,
+      "percentage": 19.51,
+      "included_dx": [
+        "mel",
+        "bcc",
+        "akiec"
+      ]
+    }
+  },
+  "class_imbalance": {
+    "benign_to_malignant_ratio": 4.1254,
+    "full_dataset_class_weights": {
+      "0": 0.621201,
+      "1": 2.562692
+    },
+    "training_set_class_weights": {
+      "0": 0.621279,
+      "1": 2.561359
+    }
+  },
+  "lesion_group_analysis": {
+    "unique_lesion_ids": 7470,
+    "lesions_with_single_image": 5514,
+    "lesions_with_multiple_images": 1956,
+    "max_images_per_lesion": 6,
+    "lesions_with_conflicting_binary_labels": 0,
+    "zero_lesion_leakage_verified": true
+  },
+  "splits": {
+    "train": {
+      "total_images": 7013,
+      "unique_lesions": 5232,
+      "benign_count": 5644,
+      "malignant_count": 1369,
+      "benign_pct": 80.48,
+      "malignant_pct": 19.52,
+      "dx_breakdown": {
+        "akiec": 230,
+        "bcc": 361,
+        "bkl": 770,
+        "df": 80,
+        "mel": 778,
+        "nv": 4695,
+        "vasc": 99
+      }
+    },
+    "val": {
+      "total_images": 1501,
+      "unique_lesions": 1120,
+      "benign_count": 1208,
+      "malignant_count": 293,
+      "benign_pct": 80.48,
+      "malignant_pct": 19.52,
+      "dx_breakdown": {
+        "akiec": 49,
+        "bcc": 77,
+        "bkl": 165,
+        "df": 17,
+        "mel": 167,
+        "nv": 1005,
+        "vasc": 21
+      }
+    },
+    "test": {
+      "total_images": 1501,
+      "unique_lesions": 1118,
+      "benign_count": 1209,
+      "malignant_count": 292,
+      "benign_pct": 80.55,
+      "malignant_pct": 19.45,
+      "dx_breakdown": {
+        "akiec": 48,
+        "bcc": 76,
+        "bkl": 164,
+        "df": 18,
+        "mel": 168,
+        "nv": 1005,
+        "vasc": 22
+      }
+    }
+  },
+  "saved_artifacts": {
+    "train_split_csv": "data/processed/train_split.csv",
+    "val_split_csv": "data/processed/val_split.csv",
+    "test_split_csv": "data/processed/test_split.csv",
+    "full_mapped_csv": "data/processed/full_metadata_mapped.csv",
+    "class_mapping_json": "data/processed/class_mapping.json",
+    "class_distribution_figure": "results/figures/class_distribution.png"
+  }
+}

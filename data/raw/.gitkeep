@@ -1,0 +1,4 @@
+# Place official HAM10000 dataset files in this directory:
+# - HAM10000_metadata.csv
+# - HAM10000_images_part_1/ (or images directly inside data/raw/)
+# - HAM10000_images_part_2/

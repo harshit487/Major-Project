@@ -1,0 +1,93 @@
+{
+  "dataset": "HAM10000 (Human Against Machine with 10000 training images)",
+  "reference": "Tschandl, P., Rosendahl, C. & Kittler, H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. Sci. Data 5, 180161 (2018).",
+  "target_task": "Binary Classification (Benign vs. Malignant)",
+  "binary_encoding": {
+    "0": "Benign (Non-cancerous)",
+    "1": "Malignant (Cancerous / In-situ Neoplastic)"
+  },
+  "positive_class": {
+    "label": 1,
+    "name": "Malignant",
+    "original_categories": [
+      "mel",
+      "bcc",
+      "akiec"
+    ]
+  },
+  "negative_class": {
+    "label": 0,
+    "name": "Benign",
+    "original_categories": [
+      "nv",
+      "bkl",
+      "df",
+      "vasc"
+    ]
+  },
+  "mapping_table": {
+    "akiec": {
+      "original_code": "akiec",
+      "full_name": "Actinic keratoses and intraepithelial carcinoma / Bowen's disease",
+      "binary_label": 1,
+      "binary_class": "Malignant",
+      "clinical_category": "Malignant / Pre-malignant Squamous Neoplasm (In Situ)",
+      "clinical_rationale": "Includes Bowen's disease (squamous cell carcinoma in situ) and actinic keratoses (intraepidermal squamous dysplasia capable of progressing to invasive squamous cell carcinoma). In clinical dermoscopic triage and standard HAM10000 binary benchmarks, akiec is grouped with malignant lesions because it requires clinical intervention, biopsy, or ablation.",
+      "ambiguity_note": "Ambiguous boundary: Early actinic keratosis is clinically considered precancerous dysplasia rather than invasive cancer, whereas Bowen's disease in the same HAM10000 category is carcinoma in situ. Grouping akiec as Malignant prioritizes patient safety (reducing false negatives for squamous neoplasia)."
+    },
+    "bcc": {
+      "original_code": "bcc",
+      "full_name": "Basal cell carcinoma",
+      "binary_label": 1,
+      "binary_class": "Malignant",
+      "clinical_category": "Malignant Epithelial Neoplasm",
+      "clinical_rationale": "Basal cell carcinoma is the most common malignant skin cancer worldwide. Though rarely metastatic, it is locally invasive and destructive, requiring surgical excision or targeted therapy.",
+      "ambiguity_note": "Unambiguous malignant cutaneous neoplasm."
+    },
+    "mel": {
+      "original_code": "mel",
+      "full_name": "Melanoma",
+      "binary_label": 1,
+      "binary_class": "Malignant",
+      "clinical_category": "Malignant Melanocytic Neoplasm",
+      "clinical_rationale": "Malignant melanoma is the most lethal form of skin cancer with high metastatic potential if not detected early.",
+      "ambiguity_note": "Unambiguous malignant melanocytic neoplasm."
+    },
+    "bkl": {
+      "original_code": "bkl",
+      "full_name": "Benign keratosis-like lesions (solar lentigines / seborrheic keratoses / lichen-planus like keratoses)",
+      "binary_label": 0,
+      "binary_class": "Benign",
+      "clinical_category": "Benign Epidermal Proliferation",
+      "clinical_rationale": "Encompasses seborrheic keratoses, solar lentigines, and lichen-planus-like keratoses, all of which are biologically benign epidermal lesions with no malignant potential.",
+      "ambiguity_note": "While visually capable of mimicking melanoma under dermoscopy (especially inflamed seborrheic keratosis or LPLK), histopathologically and clinically these lesions are strictly benign."
+    },
+    "df": {
+      "original_code": "df",
+      "full_name": "Dermatofibroma",
+      "binary_label": 0,
+      "binary_class": "Benign",
+      "clinical_category": "Benign Fibrohistiocytic Proliferation",
+      "clinical_rationale": "Dermatofibroma is a common, benign dermal nodule composed of fibroblastic and histiocytic cells requiring no oncological excision.",
+      "ambiguity_note": "Unambiguous benign cutaneous nodule."
+    },
+    "nv": {
+      "original_code": "nv",
+      "full_name": "Melanocytic nevi",
+      "binary_label": 0,
+      "binary_class": "Benign",
+      "clinical_category": "Benign Melanocytic Neoplasm",
+      "clinical_rationale": "Common benign proliferations of melanocytes (moles). Represents the majority (~67%) of the HAM10000 dataset.",
+      "ambiguity_note": "Dysplastic/atypical nevi may clinically resemble early melanoma, but all lesions labeled 'nv' in HAM10000 were verified as benign via follow-up, expert consensus, confocal microscopy, or histopathology."
+    },
+    "vasc": {
+      "original_code": "vasc",
+      "full_name": "Vascular lesions (angiomas, angiokeratomas, pyogenic granulomas, hemorrhage)",
+      "binary_label": 0,
+      "binary_class": "Benign",
+      "clinical_category": "Benign Vascular Proliferation / Hemorrhage",
+      "clinical_rationale": "Includes cherry angiomas, angiokeratomas, pyogenic granulomas, and subcorneal hemorrhage\u2014all non-malignant vascular conditions.",
+      "ambiguity_note": "Unambiguous benign vascular category in HAM10000."
+    }
+  }
+}

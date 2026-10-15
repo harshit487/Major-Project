@@ -1,0 +1,54 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+
+# Dataset files (Do not commit raw or processed dataset images/large CSVs)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.jpg
+data/processed/*.png
+data/processed/*.jpeg
+
+# Trained model weights and checkpoints
+backend/models/*.keras
+backend/models/*.h5
+backend/models/*.pb
+backend/models/*.weights.h5
+backend/models/.keras_cache/
+results/.mpl_cache/
+!backend/models/.gitkeep
+
+# Generated runtime uploads, Grad-CAM outputs, and PDF reports
+backend/static/uploads/*
+backend/static/gradcam/*
+reports/*.pdf
+!reports/.gitkeep
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables and secrets
+.env
+.env.local
+*.pem
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
